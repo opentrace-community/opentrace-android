@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_white_radius"
+    android:weightSum="6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        tools:ignore="Suspicious0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal|top"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_opentrace_blue_transparent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:text="Tap 'Next' only if a contact tracer tells you to do so" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="Suspicious0dp">
+
+        <Button
+            android:id="@+id/forUseFragmentActionButton"
+            android:background="@drawable/gradient"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/font"
+            android:textFontWeight="600"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:text="Next"
+            android:textStyle="normal"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>

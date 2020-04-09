@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_11">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/view_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_blue"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="20dp"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/animation_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:padding="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_opentrace_blue_transparent"
+                      />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_last_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last update: X:XX XX"
+                        android:textColor="@color/blue_update"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="272dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/OnboardingTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/how_to_help" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/OnboardingDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/help_action" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/view_setup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_yellow"
+                    android:orientation="vertical"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/imv_incomplete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:paddingLeft="66dp"
+                        android:paddingRight="66dp"
+                        android:src="@drawable/ic_opentrace_blue_transparent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/setup_incomplete"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/help_us_identify"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/btn_restart_app_setup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/gradient"
+                        android:minWidth="200dp"
+                        android:text="@string/restart_app_setup"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textFontWeight="600"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/permission_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="left"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/app_permission_status"
+                        android:textColor="@color/grey_2"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bluetooth_card_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        card_view:cardBackgroundColor="@color/white"
+                        card_view:cardCornerRadius="12dp"
+                        card_view:cardMaxElevation="2dp"
+                        card_view:cardPreventCornerOverlap="true"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:contentPadding="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="?android:selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:text="@string/bluetooth_on"
+                                android:textColor="@color/grey_2"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/iv_bluetooth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/icon_checkbox"
+                                android:clickable="false" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/location_card_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        card_view:cardBackgroundColor="@color/white"
+                        card_view:cardCornerRadius="12dp"
+                        card_view:cardMaxElevation="2dp"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:contentPadding="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="?android:selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:text="@string/location_on"
+                                android:textColor="@color/grey_2"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/iv_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:clickable="false"
+                                android:src="@drawable/icon_checkbox" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/battery_card_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        card_view:cardBackgroundColor="@color/white"
+                        card_view:cardCornerRadius="12dp"
+                        card_view:cardMaxElevation="2dp"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:contentPadding="0dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="?android:selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:text="@string/battery_optimiser"
+                                android:textColor="@color/grey_2"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/iv_battery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:clickable="false"
+                                android:src="@drawable/icon_checkbox" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/push_card_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        card_view:cardBackgroundColor="@color/white"
+                        card_view:cardCornerRadius="12dp"
+                        card_view:cardMaxElevation="2dp"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:contentPadding="0dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="?android:selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:text="@string/push_noti"
+                                android:textColor="@color/grey_2"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/iv_push"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:clickable="false"
+                                android:src="@drawable/icon_checkbox" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/share_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                card_view:cardBackgroundColor="@color/light_blue"
+                card_view:cardCornerRadius="12dp"
+                card_view:cardMaxElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_share"
+                        android:drawablePadding="10dp"
+
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/share_this_app"
+                        android:textColor="@color/primary_blue_2"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="25dp"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/ask_friend"
+                        android:textColor="@color/grey_2"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_announcement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@drawable/background_purple_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_announcement"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="No news"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:linksClickable="true"
+            android:textColorLink="@color/white"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_announcement_close" />
+
+        <ImageButton
+            android:id="@+id/btn_announcement_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:src="@drawable/ic_cross"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="fontFamily">@font/font</item>
+    </style>
+
+    <style name="AppTheme.DebugNoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="fontFamily">@font/font</item>
+    </style>
+
+    <style name="button" parent="@android:style/Widget.Button">
+        <item name="android:fontFamily">@font/font</item>
+        <item name="fontFamily">@font/font</item>
+    </style>
+
+    <style name="AppFont">
+        <item name="android:fontFamily">@font/font</item>
+        <item name="fontFamily">@font/font</item>
+    </style>
+
+    <style name="Theme.AppCompat.Transparent.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="word_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+    </style>
+
+    <style name="MyProgressBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressBackgroundTint">@color/grey_9</item>
+        <item name="android:progressTint">@color/green</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
+
+    <style name="OnboardingImage">
+        <item name="android:layout_marginLeft">26dp</item>
+        <item name="android:layout_marginTop">28dp</item>
+        <item name="android:layout_marginRight">26dp</item>
+    </style>
+
+    <style name="OnboardingTitle" parent="AppFont">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/grey_2</item>
+    </style>
+
+    <style name="OnboardingDesc" parent="AppFont">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_3</item>
+    </style>
+
+    <style name="OnboardingDescNew" parent="AppFont">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_3</item>
+    </style>
+
+    <style name="OnboardingDescNoPadding" parent="AppFont">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_3</item>
+    </style>
+
+    <style name="OnboardingSubDesc" parent="AppFont">
+        <item name="android:layout_marginTop">28dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_3</item>
+    </style>
+
+</resources>

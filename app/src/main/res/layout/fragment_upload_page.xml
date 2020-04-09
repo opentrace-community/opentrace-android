@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:weightSum="12"
+        android:background="@drawable/background_blue_gradient">
+
+        <LinearLayout
+            android:id="@+id/topLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="For use by OTC"
+                android:textSize="32sp"
+                android:textFontWeight="600" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Upload data for contact tracing"
+                android:textSize="18sp"
+                android:textFontWeight="600" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_placeholder_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <FrameLayout
+                android:id="@+id/fragment_placeholder"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/fragment_buildno"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="30dp"
+            android:text="test" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/uploadPageFragmentLoadingProgressBarFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:animateLayoutChanges="true"
+        android:background="#000000"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</FrameLayout>

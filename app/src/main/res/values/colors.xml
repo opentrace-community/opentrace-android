@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="notification_tint">#499dd6</color>
+
+    <color name="dark">#17363d</color>
+    <color name="lighter">#3d5c63</color>
+    <color name="off_white">#F5F2D0</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+
+    <color name="primary_blue_1">#0030A1</color>
+    <color name="primary_blue_2">#003DB5</color>
+    <color name="primary_blue_3">#004AC9</color>
+    <color name="primary_blue_4">#0057DD</color>
+    <color name="primary_blue_5">#0057DD</color>
+
+    <color name="secondary_blue_1">#04A5FF</color>
+    <color name="secondary_blue_2">#0798EB</color>
+    <color name="secondary_blue_3">#0A83D7</color>
+    <color name="secondary_blue_4">#0D6CC3</color>
+
+    <color name="grey_1">#202020</color>
+    <color name="grey_2">#383838</color>
+    <color name="grey_3">#505050</color>
+    <color name="grey_4">#686868</color>
+    <color name="grey_5">#808080</color>
+    <color name="grey_6">#989898</color>
+    <color name="grey_7">#B0B0B0</color>
+    <color name="grey_8">#C8C8C8</color>
+    <color name="grey_9">#E0E0E0</color>
+    <color name="grey_10">#ECECEC</color>
+    <color name="grey_11">#F8F8F8</color>
+
+    <color name="error">#CC0000</color>
+    <color name="success">#449D44</color>
+
+
+    <color name="green">#449D44</color>
+    <color name="grey">#E5E5E5</color>
+    <color name="light_blue">#E6EDF7</color>
+    <color name="light_yellow">#FFF5DC</color>
+
+    <color name="blue_update">#0030A1</color>
+</resources>

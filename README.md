@@ -43,6 +43,8 @@ MAX_SCAN_INTERVAL=43000
 ADVERTISING_DURATION=180000
 ADVERTISING_INTERVAL=5000
 
+PURGE_INTERVAL=86400000
+PURGE_TTL=1814400000
 MAX_QUEUE_TIME=7000
 BM_CHECK_INTERVAL=540000
 HEALTH_CHECK_INTERVAL=900000
@@ -132,6 +134,9 @@ OpenTrace uses the following [third party libraries / tools](./ATTRIBUTION.md).
 ---
 
 ### ChangeLog
+
+1.0.1
+*   Updated readme.md to add in two more fields for setup
 
 1.0.0
 *   First release of this repo

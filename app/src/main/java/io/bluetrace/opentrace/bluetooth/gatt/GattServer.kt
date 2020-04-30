@@ -40,6 +40,7 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
 
                 BluetoothProfile.STATE_DISCONNECTED -> {
                     CentralLog.i(TAG, "${device?.address} Disconnected from local GATT server.")
+                    readPayloadMap.remove(device?.address)
                 }
 
                 else -> {

@@ -24,6 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        
+        <meta-data android:name="firebase_analytics_collection_deactivated" android:value="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

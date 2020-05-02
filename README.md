@@ -135,6 +135,10 @@ OpenTrace uses the following [third party libraries / tools](./ATTRIBUTION.md).
 
 ### ChangeLog
 
+1.0.2
+*   Fixed an issue in GattServer.kt where the cached readPayLoad is not cleared properly in some cases
+*   Removed Firebase Analytics
+
 1.0.1
 *   Updated readme.md to add in two more fields for setup
 

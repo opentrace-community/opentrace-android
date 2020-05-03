@@ -135,7 +135,7 @@ object TempIDManager {
                 )
                 Preference.putLastFetchTimeInMillis(
                     context,
-                    System.currentTimeMillis() * 1000
+                    System.currentTimeMillis()
                 )
             }
 

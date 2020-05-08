@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="au.gov.health.covidsafe.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_selfIsolate"
+            app:destination="@id/uploadMasterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_homeFragment_to_helpFragment"
+            app:destination="@id/helpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_homeFragment_to_peekActivity"
+            app:destination="@id/peekActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/uploadMasterFragment"
+        android:name="au.gov.health.covidsafe.ui.upload.UploadContainerFragment"
+        tools:layout="@layout/fragment_upload_master" />
+
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="au.gov.health.covidsafe.ui.home.HelpFragment"
+        android:label="HelpFragment"
+        tools:layout="@layout/fragment_help"/>
+    <activity
+        android:id="@+id/peekActivity"
+        android:name="au.gov.health.covidsafe.PeekActivity"
+        android:label="PeekActivity" />
+
+</navigation>

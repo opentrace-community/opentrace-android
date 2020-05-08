@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
+    <string name="mp_feedback_host" />
+    <string name="mp_feedback_apikey" />
+    <string name="mp_feedback_projectkey" />
+    <string-array name="mp_feedback_components">
+        <item>Android</item>
+    </string-array>
+</resources>

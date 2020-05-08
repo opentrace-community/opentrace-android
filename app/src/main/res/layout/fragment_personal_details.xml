@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/keyline_5"
+        android:paddingEnd="@dimen/keyline_5">
+
+        <TextView
+            android:id="@+id/personal_details_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_6"
+            android:text="@string/personal_details_headline"
+            android:textAppearance="?textAppearanceHeadline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/personal_details_name_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:text="@string/personal_details_name_title"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_headline" />
+
+        <EditText
+            android:id="@+id/personal_details_name"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_field_height"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:background="@drawable/edittext_modified_states"
+            android:hint="@string/personal_details_name_hint"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingStart="@dimen/keyline_1"
+            android:paddingEnd="@dimen/keyline_1"
+            android:singleLine="true"
+            android:textColor="@color/slack_black"
+            android:textColorHighlight="@color/dark_cerulean_3"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_body_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_name_title"
+            tools:text="John Smith" />
+
+        <TextView
+            android:id="@+id/personal_details_name_error"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:text="@string/invalid_name"
+            android:textColor="@color/error"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_name"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/personal_details_name_barrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="personal_details_name,personal_details_name_error" />
+
+        <TextView
+            android:id="@+id/personal_details_age_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:text="@string/personal_details_age_title"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_name_barrier" />
+
+        <TextView
+            android:id="@+id/personal_details_age"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_field_height"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:background="@drawable/edit_text_black_background"
+            android:gravity="center_vertical"
+            android:hint="@string/personal_details_age_hint"
+            android:paddingStart="@dimen/keyline_1"
+            android:paddingEnd="@dimen/keyline_1"
+            android:textColor="@color/slack_black"
+            android:textColorHighlight="@color/dark_cerulean_3"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_body_small"
+            android:drawableRight="@drawable/ic_arrow_drop_down"
+            android:drawableTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_age_title"
+            tools:text="John Smith" />
+
+        <TextView
+            android:id="@+id/personal_details_age_error"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:text="@string/invalid_age"
+            android:textColor="@color/error"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_age"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/personal_details_age_barrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="personal_details_age,personal_details_age_error" />
+
+        <TextView
+            android:id="@+id/personal_details_post_code_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:text="@string/personal_details_post_code"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_age_barrier" />
+
+        <EditText
+            android:id="@+id/personal_details_post_code"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_field_height"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:background="@drawable/edittext_modified_states"
+            android:digits="0123456789"
+            android:gravity="center_vertical"
+            android:hint="@string/personal_details_post_code_hint"
+            android:inputType="number"
+            android:maxLength="4"
+            android:paddingStart="@dimen/keyline_1"
+            android:paddingEnd="@dimen/keyline_1"
+            android:textColor="@color/slack_black"
+            android:textColorHighlight="@color/dark_cerulean_3"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_body_small"
+            android:imeOptions="actionDone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_post_code_title"
+            tools:text="John Smith" />
+
+        <TextView
+            android:id="@+id/personal_details_post_code_error"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:text="@string/invalid_post_code"
+            android:textColor="@color/error"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_details_post_code"
+            tools:text="@string/invalid_post_code"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/personal_details_barrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="personal_details_post_code,personal_details_post_code_error" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

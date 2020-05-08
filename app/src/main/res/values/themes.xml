@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
+    <style name="MyTheme.DayNight" parent="Base.MyTheme" >
+    </style>
+
+    <style name="MyTheme.DayNightDebug" parent="MyTheme.DayNight">
+        <item name="colorOnSecondary">@color/dark_green</item>
+    </style>
+
+    <!--Base custom theme which will be shared between both light and dark theme variants-->
+    <style name="Base.MyTheme" parent="Base.MaterialThemeBuilder">
+
+        <!--Material color attributes -->
+        <item name="colorPrimary">@color/dark_green</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/dark_green</item>
+        <item name="colorError">@color/white</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorControlActivated">@color/dark_green</item>
+        <item name="colorControlNormal">@color/dark_green</item>
+        <item name="divider">@color/white</item>
+        <item name="android:textColor">@color/slack_black</item>
+
+        <!--Material type attributes-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MyTheme.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MyTheme.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MyTheme.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MyTheme.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MyTheme.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MyTheme.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MyTheme.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MyTheme.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MyTheme.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MyTheme.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MyTheme.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Button.MyTheme.MaterialButtonOutlinedStyle
+        </item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MyTheme.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MyTheme.Overline</item>
+
+        <!--Component styles-->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert
+        </item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+
+    </style>
+
+    <style name="Base.MaterialThemeBuilder" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
+            ?colorControlHighlight
+        </item>
+
+        <!--Remap legacy AppCompat attributes to MaterialComponent attributes-->
+        <item name="colorPrimaryDark">?colorPrimaryVariant</item>
+        <item name="colorSecondary">?colorSecondary</item>
+    </style>
+
+</resources>

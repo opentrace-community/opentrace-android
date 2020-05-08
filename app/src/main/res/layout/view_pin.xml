@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_height="match_parent"
+    tools:layout_width="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pin_1"
+        style="@style/PinInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_7"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/space_1"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <Space
+        android:id="@+id/space_1"
+        android:layout_width="@dimen/keyline_2"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/pin_1"
+        app:layout_constraintRight_toLeftOf="@+id/pin_2"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pin_2"
+        style="@style/PinInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_7"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/space_1"
+        app:layout_constraintRight_toLeftOf="@+id/space_2"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <Space
+        android:id="@+id/space_2"
+        android:layout_width="@dimen/keyline_2"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/pin_2"
+        app:layout_constraintRight_toLeftOf="@+id/pin_3"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pin_3"
+        style="@style/PinInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_7"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/space_2"
+        app:layout_constraintRight_toLeftOf="@+id/space_3"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <Space
+        android:id="@+id/space_3"
+        android:layout_width="@dimen/keyline_2"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/pin_3"
+        app:layout_constraintRight_toLeftOf="@+id/pin_4"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pin_4"
+        style="@style/PinInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_7"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/space_3"
+        app:layout_constraintRight_toLeftOf="@+id/space_4"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number"
+        />
+
+    <Space
+        android:id="@+id/space_4"
+        android:layout_width="@dimen/keyline_2"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/pin_4"
+        app:layout_constraintRight_toLeftOf="@+id/pin_5"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pin_5"
+        style="@style/PinInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_7"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/space_4"
+        app:layout_constraintRight_toLeftOf="@+id/space_6"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <Space
+        android:id="@+id/space_6"
+        android:layout_width="@dimen/keyline_2"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/pin_5"
+        app:layout_constraintRight_toLeftOf="@+id/pin_6"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pin_6"
+        style="@style/PinInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_7"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/space_6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+</merge>

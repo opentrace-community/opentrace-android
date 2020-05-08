@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding"
+    app:startDestination="@id/introFragment">
+
+    <include app:graph="@navigation/nav_register" />
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.introduction.IntroductionFragment"
+        android:label="IntroductionFragment"
+        tools:layout="@layout/fragment_intro">
+        <action
+            android:id="@+id/action_introFragment_to_howItWorksFragment"
+            app:destination="@id/howItWorksFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/howItWorksFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.howitworks.HowItWorksFragment"
+        android:label="HowItWorksFragment"
+        tools:layout="@layout/fragment_how_it_works">
+        <action
+            android:id="@+id/action_howItWorksFragment_to_dataPrivacy"
+            app:destination="@id/dataPrivacyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataPrivacyFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.dataprivacy.DataPrivacyFragment"
+        android:label="DataPrivacyFragment"
+        tools:layout="@layout/fragment_data_privacy">
+        <action
+            android:id="@+id/action_dataPrivacy_to_registrationConsentFragment"
+            app:destination="@id/resistrationConsentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resistrationConsentFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.registrationcontent.RegistrationContentFragment"
+        android:label="RegistrationContentFragment"
+        tools:layout="@layout/fragment_registration_consent">
+        <action
+            android:id="@+id/action_registrationConsentFragment_to_personalDetailsFragment"
+            app:destination="@id/personalDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personalDetailsFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.personal.PersonalDetailsFragment"
+        android:label="PersonalDetailsFragment"
+        tools:layout="@layout/fragment_personal_details">
+        <action
+            android:id="@+id/action_personalDetails_to_enterNumberFragment"
+            app:destination="@id/nav_register"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_personalDetails_to_underSixteenFragment"
+            app:destination="@id/underSixteenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/underSixteenFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.undersixteen.UnderSixteenFragment"
+        android:label="UnderSixteenFragment"
+        tools:layout="@layout/fragment_under_sixteen" >
+        <action
+            android:id="@+id/action_underSixteenFragment_to_enterNumberFragment"
+            app:destination="@id/nav_register"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.permission.PermissionFragment"
+        android:label="PermissionFragment"
+        tools:layout="@layout/fragment_permission">
+        <action
+            android:id="@+id/action_permissionFragment_to_permissionSuccessFragment"
+            app:destination="@id/permissionSuccessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionSuccessFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.permissionsuccess.PermissionSuccessFragment"
+        android:label="PermissionSuccessFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        tools:layout="@layout/fragment_permission_success" />
+</navigation>

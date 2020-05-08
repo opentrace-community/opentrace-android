@@ -2,27 +2,69 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/transparent">
+    android:layout_height="match_parent">
 
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_title"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/HelpToolbarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="12dp"
-        android:gravity="left"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="Help"
-        android:textColor="@color/grey_2"
-        android:textSize="16sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:textStyle="bold"
-        android:visibility="visible" />
+        android:gravity="center_vertical"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topInset"
+        app:layout_constraintWidth_default="wrap"
+        app:navigationIcon="@drawable/ic_up"
+        app:title="@string/title_help">
 
+        <TextView
+            android:id="@+id/reportAnIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/action_report_an_issue"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/action_report_an_issue"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/report_an_issue_Text" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <WebView
+        android:id="@+id/helpWebView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topInset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

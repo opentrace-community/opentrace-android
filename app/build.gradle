@@ -1,20 +1,17 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'io.fabric'
-apply plugin: 'com.google.firebase.appdistribution'
-apply plugin: "com.cookpad.android.plugin.license-tools"
 
-apply plugin: 'com.jaredsburrows.license'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 buildscript {
     repositories {
         google()
-    }
 
-    dependencies {
-        classpath 'com.google.firebase:firebase-appdistribution-gradle:1.3.1'
     }
 }
 
@@ -29,14 +26,18 @@ def getGitHash = { ->
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
-        applicationId "io.bluetrace.opentrace"
-        resValue "string", "build_config_package", "io.bluetrace.opentrace"
-        minSdkVersion 22
+        applicationId "au.gov.health.covidsafe"
+        resValue "string", "build_config_package", "au.gov.health.covidsafe"
+        minSdkVersion 23
         targetSdkVersion 29
-        versionCode 41
-        versionName "1.0.41"
+        versionCode 16
+        versionName "1.0.16"
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -47,12 +48,8 @@ android {
             }
         }
 
-        buildConfigField "String", "STORE_URL", STORE_URL
-        buildConfigField "String", "PRIVACY_URL", PRIVACY_URL
-
-        buildConfigField "String", "FIREBASE_REGION", FIREBASE_REGION
-
         buildConfigField "String", "ORG", ORG
+        buildConfigField "int", "PROTOCOL_VERSION", PROTOCOL_VERSION
         buildConfigField "int", "SERVICE_FOREGROUND_NOTIFICATION_ID", SERVICE_FOREGROUND_NOTIFICATION_ID
         buildConfigField "String", "SERVICE_FOREGROUND_CHANNEL_ID", SERVICE_FOREGROUND_CHANNEL_ID
         buildConfigField "String", "SERVICE_FOREGROUND_CHANNEL_NAME", SERVICE_FOREGROUND_CHANNEL_NAME
@@ -66,127 +63,155 @@ android {
         buildConfigField "long", "MAX_QUEUE_TIME", MAX_QUEUE_TIME
         buildConfigField "long", "BM_CHECK_INTERVAL", BM_CHECK_INTERVAL
         buildConfigField "long", "HEALTH_CHECK_INTERVAL", HEALTH_CHECK_INTERVAL
-        buildConfigField "long", "PURGE_INTERVAL", PURGE_INTERVAL
-        buildConfigField "long", "PURGE_TTL", PURGE_TTL
         buildConfigField "long", "CONNECTION_TIMEOUT", CONNECTION_TIMEOUT
         buildConfigField "long", "BLACKLIST_DURATION", BLACKLIST_DURATION
 
         buildConfigField "long", "ADVERTISING_DURATION", ADVERTISING_DURATION
         buildConfigField "long", "ADVERTISING_INTERVAL", ADVERTISING_INTERVAL
 
-        buildConfigField "String", "V2_CHARACTERISTIC_ID", V2_CHARACTERISTIC_ID
+        buildConfigField "boolean", "ENABLE_DEBUG_SCREEN", "false"
+    }
 
+    signingConfigs {
+
+        release {
+        }
+
+        staging {
+        }
+
+        debug {
+        }
     }
 
     buildTypes {
         debug {
-            buildConfigField "String", "FIREBASE_UPLOAD_BUCKET", STAGING_FIREBASE_UPLOAD_BUCKET
             buildConfigField "String", "BLE_SSID", STAGING_SERVICE_UUID
+            buildConfigField "boolean", "ENABLE_DEBUG_SCREEN", "true"
+            buildConfigField "String", "END_POINT_PREFIX", TEST_END_POINT_PREFIX
+            buildConfigField "String", "BASE_URL", TEST_BASE_URL
+
 
             String ssid = STAGING_SERVICE_UUID
-            versionNameSuffix "-debug-${getGitHash()}-${ssid.substring(ssid.length() - 5, ssid.length() - 1)}"
-            resValue "string", "app_name", "OpenTrace Debug"
-            applicationIdSuffix "stg"
+            versionNameSuffix "-debug-${getGitHash()}-${ssid.substring(ssid.length() - 5,ssid.length() - 1 )}"
+            resValue "string", "app_name", "COVIDSafe Debug"
+            applicationIdSuffix "debug"
+            signingConfig signingConfigs.debug
         }
 
-        release {
+        staging {
+            buildConfigField "String", "BLE_SSID", STAGING_SERVICE_UUID
+            buildConfigField "boolean", "ENABLE_DEBUG_SCREEN", "true"
+            buildConfigField "String", "END_POINT_PREFIX", STAGING_END_POINT_PREFIX
+            buildConfigField "String", "BASE_URL", STAGING_BASE_URL
 
-            buildConfigField "String", "FIREBASE_UPLOAD_BUCKET", PRODUCTION_FIREBASE_UPLOAD_BUCKET
-            buildConfigField "String", "BLE_SSID", PRODUCTION_SERVICE_UUID
 
+            // Retrieve bluetooth ssid from staging's strings.xml
+            String ssid = STAGING_SERVICE_UUID
+            versionNameSuffix "-beta-${getGitHash()}-${ssid.substring(ssid.length() - 5,ssid.length() - 1 )}"
             debuggable false
-            jniDebuggable false
-            renderscriptDebuggable false
-            minifyEnabled false
-            multiDexEnabled false
-            zipAlignEnabled true
-            resValue "string", "app_name", "OpenTrace"
+
+            applicationIdSuffix "beta"
+            resValue "string", "app_name", "COVIDSafe beta"
 
             lintOptions {
                 // Ignore lint errors for now
                 abortOnError false
             }
+            matchingFallbacks = ['release']
+            signingConfig signingConfigs.staging
         }
+        release {
+
+            buildConfigField "String", "BLE_SSID", PRODUCTION_SERVICE_UUID
+            buildConfigField "String", "END_POINT_PREFIX", PRODUCTION_END_POINT_PREFIX
+            buildConfigField "String", "BASE_URL", PROD_BASE_URL
+
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            minifyEnabled false
+            shrinkResources false
+            multiDexEnabled false
+            zipAlignEnabled true
+            resValue "string", "app_name", "COVIDSafe"
+
+            lintOptions {
+                // Ignore lint errors for now
+                abortOnError false
+            }
+            signingConfig signingConfigs.release
+
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
 
+}
 
-    // Add for using latest experimental build of Android Extensions
-    androidExtensions {
-        experimental = true
-    }
+repositories {
+    jcenter()
 }
 
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation project(":feedback-android")
+    // kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    def kotlin_coroutines_version = "1.3.5"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+
+    //androidx
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
-    implementation group: 'androidx.localbroadcastmanager', name: 'localbroadcastmanager', version: '1.0.0-alpha3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.google.firebase:firebase-config-ktx:19.1.2'
-    implementation 'com.google.firebase:firebase-analytics:17.2.3'
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
-    implementation 'com.google.firebase:firebase-storage:19.1.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.hbb20:ccp:2.3.4'
+    implementation 'com.google.code.gson:gson:2.8.6'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    // Room components
-    def room_version = "2.2.3"
-
-    implementation "androidx.room:room-runtime:$room_version"
+    // room
+    def room_version = "2.2.5"
     kapt "androidx.room:room-compiler:$room_version"
-    // For Kotlin use kapt instead of annotationProcessor
-
-    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
-    // optional - RxJava support for Room
-    implementation "androidx.room:room-rxjava2:$room_version"
+    // http
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation "androidx.room:room-guava:$room_version"
-
-    // Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-
-    implementation "com.google.android.material:material:1.2.0-alpha04"
-
-    def archLifecycleVersion = "2.2.0"
-    // Lifecycle components
-    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
-    kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
-
-    // ViewModel Kotlin support
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
-
+    // rx
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
-
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
-    implementation 'com.google.firebase:firebase-auth:19.2.0'
-    implementation 'com.google.firebase:firebase-functions:19.0.2'
-    implementation 'com.google.firebase:firebase-messaging:20.1.2'
 
     //bottom navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
 
     //cardview
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.guava:guava:28.2-android'
 
     //Lottie
     implementation 'com.airbnb.android:lottie:3.4.0'
 
+    implementation 'com.google.guava:guava:28.2-android'
+    implementation "androidx.security:security-crypto:1.0.0-beta01"
+    implementation "androidx.lifecycle:lifecycle-service:2.2.0"
+    implementation 'com.github.razir.progressbutton:progressbutton:2.0.1'
 }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lighter_green">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/home_header_picture_setup_complete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_help"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="spinner_home.json"
+        app:lottie_loop="true"
+        app:lottie_speed="1" />
+
+    <Space
+        android:id="@+id/home_header_picture_setup_complete_space"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_picture_setup_complete" />
+
+    <TextView
+        android:id="@+id/home_header_setup_complete_header_uploaded"
+        style="?textAppearanceBody1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingLeft="@dimen/keyline_5"
+        android:paddingRight="@dimen/keyline_5"
+        android:text="@string/home_header_uploaded_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_picture_setup_complete_space" />
+
+    <View
+        android:id="@+id/home_header_setup_complete_header_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/keyline_4"
+        android:layout_marginBottom="@dimen/keyline_4"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header_uploaded"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/home_header_setup_complete_header_uploaded_2"
+        style="?textAppearanceBody1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="home_header_setup_complete_header_divider,home_header_picture_setup_complete_space" />
+
+    <TextView
+        android:id="@+id/home_header_setup_complete_header"
+        style="?textAppearanceBody1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyline_4"
+        android:paddingLeft="@dimen/keyline_5"
+        android:paddingRight="@dimen/keyline_5"
+        android:gravity="center_horizontal"
+        android:text="@string/home_header_active_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header_uploaded_2" />
+
+    <Space
+        android:id="@+id/home_header_label_setup_complete_subtitle_bottom_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyline_7"
+        app:layout_constraintTop_toBottomOf="@+id/home_header_setup_complete_header" />
+
+
+</merge>

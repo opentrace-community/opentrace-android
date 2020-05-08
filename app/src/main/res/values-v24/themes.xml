@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.MaterialThemeBuilder" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
+            ?colorControlHighlight
+        </item>
+
+        <!--Remap legacy AppCompat attributes to MaterialComponent attributes-->
+        <item name="colorPrimaryDark">?colorPrimaryVariant</item>
+        <item name="colorSecondary">?colorSecondary</item>
+    </style>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/keyline_5"
+        android:paddingEnd="@dimen/keyline_5">
+
+        <TextView
+            android:id="@+id/under_sixteen_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_6"
+            android:text="@string/under_sixteen_headline"
+            android:textAppearance="?textAppearanceHeadline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/under_sixteen_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:text="@string/under_sixteen_content"
+            android:textAppearance="?textAppearanceBody1"
+            android:textColorLink="@color/hyperlink_enabled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_sixteen_headline" />
+
+        <au.gov.health.covidsafe.ui.view.UlView
+            android:id="@+id/under_sixteen_first_paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:textAppearance="?textAppearanceBody1"
+            android:textColorLink="@color/hyperlink_enabled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_sixteen_text"
+            app:ul_view_text="@string/under_sixteen_first_paragraph" />
+
+        <au.gov.health.covidsafe.ui.view.UlView
+            android:id="@+id/under_sixteen_second_paragraph"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:textAppearance="?textAppearanceBody1"
+            android:textColorLink="@color/hyperlink_enabled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_sixteen_first_paragraph"
+            app:ul_view_text="@string/under_sixteen_second_paragraph" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/under_sixteen_checkbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/under_sixteen_further_checkbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/under_sixteen_second_paragraph" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

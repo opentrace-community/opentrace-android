@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/cards_top_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="permissions_card_bottom_space,header_barrier" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/external_links_top_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/keyline_4"
+        android:layout_marginRight="@dimen/keyline_4"
+        app:layout_constraintTop_toBottomOf="@+id/cards_top_barrier"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardMaxElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/home_setup_complete_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:background="@color/white"
+                android:minHeight="@dimen/external_link_height"
+                app:external_linkCard_content="@string/home_set_complete_external_link_share_content"
+                app:external_linkCard_icon="@drawable/ic_home_share"
+                app:external_linkCard_icon_background="@drawable/background_circular_green"
+                app:external_linkCard_icon_padding="@dimen/keyline_1"
+                app:external_linkCard_title="@string/home_set_complete_external_link_share_title" />
+
+            <View
+                android:id="@+id/home_setup_complete_share_space"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/slack_black_3"
+                app:layout_constraintTop_toBottomOf="@+id/home_setup_complete_share" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/home_been_tested_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="@dimen/external_link_height"
+                app:external_linkCard_content="@string/home_set_complete_external_link_been_contacted_content"
+                app:external_linkCard_icon="@drawable/ic_upload_icon"
+                app:external_linkCard_icon_background="@drawable/background_circular_green"
+                app:external_linkCard_icon_padding="@dimen/keyline_1"
+                app:external_linkCard_title="@string/home_set_complete_external_link_been_contacted_title" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/external_links_bottom_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/keyline_4"
+        android:layout_marginTop="@dimen/keyline_5"
+        android:layout_marginRight="@dimen/keyline_4"
+        app:layout_constraintTop_toBottomOf="@+id/external_links_top_card"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardMaxElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/home_setup_complete_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="@dimen/external_link_height"
+                app:external_linkCard_content="@string/home_set_complete_external_link_app_content"
+                app:external_linkCard_icon="@drawable/ic_home_news"
+                app:external_linkCard_icon_background="@drawable/background_circular_black"
+                app:external_linkCard_title="@string/home_set_complete_external_link_app_title"
+                app:layout_constraintTop_toBottomOf="@+id/home_setup_complete_share_space" />
+
+            <View
+                android:id="@+id/home_setup_complete_news_space"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/slack_black_3"
+                app:layout_constraintTop_toBottomOf="@+id/home_setup_complete_app" />
+
+            <au.gov.health.covidsafe.ui.home.view.ExternalLinkCard
+                android:id="@+id/home_setup_complete_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="@dimen/external_link_height"
+                app:external_linkCard_content="@string/home_set_complete_external_link_news_content"
+                app:external_linkCard_icon="@drawable/ic_home_news"
+                app:external_linkCard_icon_background="@drawable/background_circular_dark_cerulean_1"
+                app:external_linkCard_title="@string/home_set_complete_external_link_news_title"
+                app:layout_constraintTop_toBottomOf="@+id/home_setup_complete_news_space" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</merge>
+

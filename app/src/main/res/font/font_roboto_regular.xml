@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--<roboto_regular-family xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <roboto_regular-->
+<!--        android:fontStyle="normal"-->
+<!--        android:fontWeight="400"-->
+<!--        android:roboto_regular="@roboto_regular/HKNova_Regular" />-->
+<!--    <roboto_regular-->
+<!--        android:fontStyle="bold"-->
+<!--        android:fontWeight="400"-->
+<!--        android:roboto_regular="@roboto_regular/HKNova_Bold" />-->
+<!--</roboto_regular-family>-->
+
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font
+        app:font="@font/roboto_regular"
+        app:fontStyle="normal" />
+</font-family>

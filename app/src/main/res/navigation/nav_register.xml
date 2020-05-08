@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_register"
+    app:startDestination="@+id/enterNumberFragment">
+
+    <fragment
+        android:id="@+id/enterNumberFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.enternumber.EnterNumberFragment"
+        android:label="EnterNumberFragment"
+        tools:layout="@layout/fragment_enter_number">
+        <action
+            android:id="@+id/action_enterNumberFragment_to_otpFragment"
+            app:destination="@id/enterPinFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/enterPinFragment"
+        android:name="au.gov.health.covidsafe.ui.onboarding.fragment.enterpin.EnterPinFragment"
+        android:label="OtpFragment"
+        tools:layout="@layout/fragment_enter_pin">
+        <argument
+            android:name="session"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="challengeName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_otpFragment_to_permissionFragment"
+            app:destination="@id/permissionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_enterPinFragment_to_uploadStepFourFragment"
+            app:destination="@id/uploadStepFourFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/uploadStepFourFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

@@ -5,38 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
-    android:background="#ffffff"
-    tools:context=".SplashActivity">
+    android:background="@color/splash_background"
+    android:backgroundTint="@color/splash_frame_background"
+    tools:context=".SplashActivity"
+    >
 
-    <LinearLayout
-        android:id="@+id/center"
+    <ImageView
+        android:id="@+id/splash_screen_crest"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/black"
+        android:padding="@dimen/keyline_7"
+        android:src="@drawable/australian_government_stacked_white"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintVertical_weight="5">
+        app:layout_constraintHeight_percent="0.33"
+        />
 
-        <View
-            android:layout_weight="0.15"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/splash_screen_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_splash_screen_logo"
+        android:layout_margin="@dimen/keyline_2"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintBottom_toTopOf="@+id/help_stop_covid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_screen_crest"
+        app:layout_constraintVertical_chainStyle="spread" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_weight="0.7"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_opentrace_blue_transparent"
-            app:layout_constraintTop_toTopOf="@+id/center" />
-
-        <View
-            android:layout_weight="0.15"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/help_stop_covid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_help_stop_covid"
+        android:layout_marginLeft="@dimen/keyline_2"
+        android:layout_marginTop="@dimen/keyline_2"
+        android:layout_marginRight="@dimen/keyline_2"
+        android:layout_marginBottom="@dimen/keyline_9"
+        app:layout_constraintTop_toBottomOf="@+id/splash_screen_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

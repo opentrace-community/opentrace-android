@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/keyline_5"
+        android:paddingEnd="@dimen/keyline_5">
+
+        <TextView
+            android:id="@+id/enter_pin_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_6"
+            android:gravity="center_vertical"
+            android:text="@string/enter_pin_headline"
+            android:textAppearance="?textAppearanceHeadline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/enter_pin_wrong_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:gravity="center_vertical"
+            android:text="@string/enter_pin_wrong_number"
+            android:textAppearance="?textAppearanceSubtitle1"
+            android:textColorLink="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_pin_headline" />
+
+        <au.gov.health.covidsafe.ui.view.PinInputView
+            android:id="@+id/pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_pin_wrong_number" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enter_pin_error_label"
+            style="?textAppearanceBody2"
+            android:layout_marginLeft="@dimen/keyline_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wrong_ping_number"
+            tools:text="@string/wrong_ping_number"
+            android:textColor="@color/error"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enter_pin_timer_label"
+            style="?textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_5"
+            android:text="@string/enter_pin_timer_expire"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_pin_error_label" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enter_pin_timer_value"
+            style="?textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1:59"
+            app:layout_constraintStart_toEndOf="@+id/enter_pin_timer_label"
+            app:layout_constraintTop_toTopOf="@+id/enter_pin_timer_label" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/enter_pin_timer_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="enter_pin_timer_label,enter_pin_timer_value" />
+
+        <TextView
+            android:id="@+id/enter_pin_resend_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:gravity="center_vertical"
+            android:text="@string/enter_pin_resend_pin"
+            android:textColorLink="?attr/colorPrimary"
+            android:textAppearance="?textAppearanceSubtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_pin_timer_barrier" />
+
+        <TextView
+            android:id="@+id/pin_issue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:gravity="center_vertical"
+            android:text="@string/pin_issue"
+            android:textColorLink="?attr/colorPrimary"
+            android:textAppearance="?textAppearanceSubtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_pin_resend_pin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

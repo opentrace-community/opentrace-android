@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_up" />
+
+    <fragment
+        android:id="@+id/fragment_nav_host_upload"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_upload" />
+
+    <au.gov.health.covidsafe.ui.view.SegmentedProgressBar
+        android:id="@+id/upload_progress"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="@dimen/keyline_5"
+        android:layout_marginTop="@dimen/keyline_4"
+        android:layout_marginEnd="@dimen/keyline_5"
+        app:progress_max_value="5"
+        app:progress_value="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/keyline_5"
+        android:layout_marginTop="@dimen/keyline_4"
+        android:layout_marginEnd="@dimen/keyline_5"
+        android:layout_marginBottom="@dimen/keyline_7"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/upload_answerNo"
+            style="?attr/textAppearanceButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/keyline_0"
+            android:layout_weight="1"
+            android:text="@string/upload_answer_no" />
+
+        <Button
+            android:id="@+id/upload_answerYes"
+            style="?attr/textAppearanceButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_0"
+            android:layout_weight="1"
+            android:text="@string/upload_answer_yes" />
+
+        <Button
+            android:id="@+id/upload_continue"
+            style="?attr/textAppearanceButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_continue" />
+    </LinearLayout>
+
+</LinearLayout>

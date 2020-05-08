@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="QuestionProgressBar">
+        <attr name="step_question" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="PermissionStatusCard">
+        <attr name="permissionStatusCard_title" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ExternalLinkCard">
+        <attr name="external_linkCard_title" format="string" />
+        <attr name="external_linkCard_icon" format="reference" />
+        <attr name="external_linkCard_content" format="string" />
+        <attr name="external_linkCard_icon_background" format="reference" />
+        <attr name="external_linkCard_icon_padding" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="SegmentedProgressBar">
+        <attr name="progress_max_value" format="integer|reference" />
+        <attr name="progress_value" format="integer|reference" />
+        <attr name="segment_spacing" format="dimension|reference" />
+    </declare-styleable>
+    <declare-styleable name="UlView">
+        <attr name="ul_view_text" format="string" />
+    </declare-styleable>
+
+</resources>

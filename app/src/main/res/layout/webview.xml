@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".onboarding.OnboardingActivity">
+    tools:context=".ui.onboarding.OnboardingActivity">
 
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
-
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/content_setup_incomplete_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="permissions_card" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/permissions_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/keyline_4"
+        android:layout_marginRight="@dimen/keyline_4"
+        app:layout_constraintTop_toBottomOf="@+id/header_barrier"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardMaxElevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="0dp">
+
+        <LinearLayout
+            android:id="@+id/home_setup_incomplete_permissions_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/permissions_card_title"
+                style="?textAppearanceHeadline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/keyline_4"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:layout_marginRight="@dimen/keyline_4"
+                android:includeFontPadding="false"
+                android:text="@string/home_app_permission_status_title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/permissions_card_subtitle"
+                style="?textAppearanceBody1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/keyline_4"
+                android:layout_marginTop="@dimen/keyline_4"
+                android:layout_marginRight="@dimen/keyline_4"
+                android:layout_marginBottom="@dimen/keyline_4"
+                android:includeFontPadding="false"
+                android:text="@string/home_app_permission_status_subtitle" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/slack_black_3" />
+
+            <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
+                android:id="@+id/bluetooth_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/home_bluetooth_permission" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/slack_black_3" />
+
+            <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
+                android:id="@+id/location_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/home_location_permission" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/slack_black_3" />
+
+            <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
+                android:id="@+id/battery_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/home_non_battery_optimization_permission" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/slack_black_3" />
+
+            <au.gov.health.covidsafe.ui.home.view.PermissionStatusCard
+                android:id="@+id/push_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/home_push_notification_permission" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:id="@+id/permissions_card_bottom_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyline_4"
+        app:layout_constraintTop_toBottomOf="@+id/permissions_card" />
+
+</merge>

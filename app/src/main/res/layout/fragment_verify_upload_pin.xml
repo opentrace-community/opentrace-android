@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/header"
+            android:textAppearance="?textAppearanceHeadline2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:text="@string/upload_step_verify_pin_header"
+            app:layout_constraintBottom_toTopOf="@+id/subHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/subHeader"
+            style="?attr/textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:text="@string/upload_step_verify_pin_sub_header"
+            app:layout_constraintBottom_toTopOf="@id/pin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <au.gov.health.covidsafe.ui.view.PinInputView
+            android:id="@+id/pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:layout_marginBottom="@dimen/keyline_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subHeader" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enter_pin_error_label"
+            style="?textAppearanceBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/keyline_5"
+            android:layout_marginRight="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_1"
+            android:text="@string/action_verify_invalid_pin"
+            android:textColor="@color/error"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pin"
+            tools:text="@string/action_verify_invalid_pin"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

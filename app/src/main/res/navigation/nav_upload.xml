@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upload"
+    app:startDestination="@id/uploadInitialFragment">
+
+    <include app:graph="@navigation/nav_register" />
+
+    <fragment
+        android:id="@+id/uploadInitialFragment"
+        android:name="au.gov.health.covidsafe.ui.upload.presentation.UploadInitialFragment"
+        tools:layout="@layout/fragment_upload_initial">
+        <action
+            android:id="@+id/action_uploadInitial_to_uploadStepFourFragment"
+            app:destination="@id/uploadStepFourFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/uploadStepFourFragment"
+        android:name="au.gov.health.covidsafe.ui.upload.presentation.UploadStepFourFragment"
+        tools:layout="@layout/fragment_upload_page_4">
+        <action
+            android:id="@+id/action_uploadStepFourFragment_to_verifyUploadPinFragment"
+            app:destination="@id/verifyUploadPinFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyUploadPinFragment"
+        android:name="au.gov.health.covidsafe.ui.upload.presentation.VerifyUploadPinFragment"
+        android:label="VerifyUploadPinFragment"
+        tools:layout="@layout/fragment_verify_upload_pin">
+        <action
+            android:id="@+id/action_verifyUploadPinFragment_to_uploadFinishedFragment"
+            app:destination="@id/uploadFinishedFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/uploadInitialFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_verifyUploadPinFragment_to_enterNumberFragment"
+            app:destination="@+id/nav_register"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadFinishedFragment"
+        android:name="au.gov.health.covidsafe.ui.upload.presentation.UploadFinishedFragment"
+        android:label="UploadFinishedFragment"
+        tools:layout="@layout/fragment_upload_finished" />
+
+</navigation>

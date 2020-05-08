@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="keyline_0">4dp</dimen>
+    <dimen name="keyline_1">8dp</dimen>
+    <dimen name="keyline_2">12dp</dimen>
+    <dimen name="keyline_4">16dp</dimen>
+    <dimen name="keyline_5">24dp</dimen>
+    <dimen name="keyline_6">28dp</dimen>
+    <dimen name="keyline_7">32dp</dimen>
+    <dimen name="keyline_8">48dp</dimen>
+    <dimen name="keyline_9">60dp</dimen>
+
+    <dimen name="text_otp">48sp</dimen>
+    <dimen name="text_head1">32sp</dimen>
+    <dimen name="text_head2">24sp</dimen>
+    <dimen name="text_head3">20sp</dimen>
+
+    <dimen name="text_phone_number">24sp</dimen>
+    <dimen name="text_body_medium">18sp</dimen>
+    <dimen name="text_body_small">16sp</dimen>
+    <dimen name="text_button">18sp</dimen>
+
+    <dimen name="text_field_height">46dp</dimen>
+
+    <dimen name="icon_size">24dp</dimen>
+
+    <dimen name="card_radius">4dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="permission_height">56dp</dimen>
+    <dimen name="external_link_height">104dp</dimen>
+    <dimen name="report_an_issue_Text">16sp</dimen>
+
+    <dimen name="button_radius">4dp</dimen>
+</resources>

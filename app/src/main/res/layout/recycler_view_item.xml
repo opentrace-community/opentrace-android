@@ -16,7 +16,7 @@
         android:visibility="gone"
         android:textColor="@color/off_white"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/msg"
@@ -29,7 +29,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/version"
         style="@style/word_title"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/off_white" />
@@ -37,7 +37,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_central"
@@ -46,7 +47,8 @@
             android:text="Central"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/modelc"
-            app:layout_constraintRight_toRightOf="@id/modelc" />
+            app:layout_constraintRight_toRightOf="@id/modelc"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/modelc"
@@ -56,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_central"
             app:layout_constraintLeft_toLeftOf="parent"
             android:text="MODEL_C"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textColor="@color/off_white" />
 
         <ImageView
@@ -67,7 +69,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/modelc"
-            app:layout_constraintRight_toLeftOf="@id/modelp" />
+            app:layout_constraintRight_toLeftOf="@id/modelp"
+            />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -77,14 +80,15 @@
             android:text="Peripheral"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/modelp"
-            app:layout_constraintRight_toRightOf="@id/modelp" />
+            app:layout_constraintRight_toRightOf="@id/modelp"
+            />
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/modelp"
             style="@style/word_title"
             android:text="MODEL_P"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintRight_toRightOf="parent"
@@ -96,7 +100,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/signal_strength"
         style="@style/word_title"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:layout_marginBottom="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,7 +110,7 @@
         android:id="@+id/txpower"
         style="@style/word_title"
         android:visibility="gone"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/off_white" />
@@ -115,7 +119,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/timestamp"
         style="@style/word_title"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/off_white" />
@@ -123,7 +127,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/org"
         style="@style/word_title"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/off_white" />
@@ -131,7 +135,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/finds"
         style="@style/word_title"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/off_white" />
@@ -145,7 +149,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="ModelC"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/filter_by_modelp"
             app:layout_constraintTop_toTopOf="parent" />
@@ -155,7 +159,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="ModelP"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintLeft_toRightOf="@id/filter_by_modelc"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

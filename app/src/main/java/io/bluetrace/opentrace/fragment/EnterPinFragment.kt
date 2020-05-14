@@ -227,7 +227,7 @@ class EnterPinFragment : Fragment() {
         val storage = FirebaseStorage.getInstance("gs://${bucketName}")
         var storageRef = storage.getReferenceFromUrl("gs://${bucketName}")
 
-        val dateString = SimpleDateFormat("YYYYMMdd").format(Date())
+        val dateString = SimpleDateFormat("yyyyMMdd").format(Date())
         var streetPassRecordsRef =
             storageRef.child("streetPassRecords/$dateString/${fileToUpload.name}")
 

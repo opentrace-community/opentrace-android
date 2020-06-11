@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                         if (selected != R.id.navigation_home) {
                             openFragment(
                                 LAYOUT_MAIN_ID, HomeFragment(),
-                                HomeFragment::class.java.name, 0
+                                HomeFragment::class.java.name
                             )
                         }
                         selected = R.id.navigation_home
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                         if (selected != R.id.navigation_upload) {
                             openFragment(
                                 LAYOUT_MAIN_ID, ForUseByOTCFragment(),
-                                ForUseByOTCFragment::class.java.name, 0
+                                ForUseByOTCFragment::class.java.name
                             )
                         }
 
@@ -102,8 +102,7 @@ class MainActivity : AppCompatActivity() {
     fun openFragment(
         containerViewId: Int,
         fragment: Fragment,
-        tag: String,
-        title: Int
+        tag: String
     ) {
         try { // pop all fragments
             supportFragmentManager.popBackStackImmediate(

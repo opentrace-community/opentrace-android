@@ -35,8 +35,7 @@ class ForUseByOTCFragment : Fragment() {
         parentActivity.openFragment(
             parentActivity.LAYOUT_MAIN_ID,
             UploadPageFragment(),
-            UploadPageFragment::class.java.name,
-            0
+            UploadPageFragment::class.java.name
         )
     }
 }

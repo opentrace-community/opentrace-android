@@ -21,10 +21,10 @@ class VerifyCallerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var handShakePin = Preference.getHandShakePin(view.context)
+        val handShakePin = Preference.getHandShakePin(view.context)
         verifyCallerFragmentVerificationCode.text = handShakePin
         verifyCallerFragmentActionButton.setOnClickListener {
-            var myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
+            val myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
             myParentFragment.navigateToUploadPin()
         }
     }

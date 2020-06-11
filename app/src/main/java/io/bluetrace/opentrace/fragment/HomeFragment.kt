@@ -141,7 +141,7 @@ class HomeFragment : Fragment() {
         super.onResume()
         if (!mIsBroadcastListenerRegistered) {
             // bluetooth on/off
-            var f = IntentFilter()
+            val f = IntentFilter()
             f.addAction(BluetoothAdapter.ACTION_STATE_CHANGED)
             activity!!.registerReceiver(mBroadcastListener, f)
             mIsBroadcastListenerRegistered = true
@@ -198,10 +198,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun shareThisApp() {
-        var newIntent = Intent(Intent.ACTION_SEND)
+        val newIntent = Intent(Intent.ACTION_SEND)
         newIntent.type = "text/plain"
         newIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
-        var shareMessage = remoteConfig.getString("ShareText")
+        val shareMessage = remoteConfig.getString("ShareText")
         newIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
         startActivity(Intent.createChooser(newIntent, "choose one"))
     }
@@ -210,7 +210,7 @@ class HomeFragment : Fragment() {
         override fun onReceive(context: Context, intent: Intent) {
             val action = intent.action
             if (action == BluetoothAdapter.ACTION_STATE_CHANGED) {
-                var state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1)
+                val state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1)
                 if (state == BluetoothAdapter.STATE_OFF) {
                     iv_bluetooth.isSelected = false
                 } else if (state == BluetoothAdapter.STATE_TURNING_OFF) {

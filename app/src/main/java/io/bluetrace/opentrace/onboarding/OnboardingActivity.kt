@@ -117,7 +117,7 @@ class OnboardingActivity : FragmentActivity(),
         }
 
     private fun enableFragmentbutton() {
-        var interfaceObject: OnboardingFragmentInterface? = pagerAdapter?.getItem(pager.currentItem)
+        val interfaceObject: OnboardingFragmentInterface? = pagerAdapter?.getItem(pager.currentItem)
         interfaceObject?.enableButton()
     }
 

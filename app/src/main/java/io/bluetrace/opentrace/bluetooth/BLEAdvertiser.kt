@@ -16,7 +16,11 @@ class BLEAdvertiser constructor(val serviceUUID: String) {
 
     private var advertiser: BluetoothLeAdvertiser? =
         BluetoothAdapter.getDefaultAdapter().bluetoothLeAdvertiser
-    private val TAG = "BLEAdvertiser"
+
+    companion object {
+        private const val TAG = "BLEAdvertiser"
+    }
+
     private var charLength = 3
     private var callback: AdvertiseCallback = object : AdvertiseCallback() {
         override fun onStartSuccess(settingsInEffect: AdvertiseSettings) {
@@ -29,7 +33,7 @@ class BLEAdvertiser constructor(val serviceUUID: String) {
         override fun onStartFailure(errorCode: Int) {
             super.onStartFailure(errorCode)
 
-            var reason: String
+            val reason: String
 
             when (errorCode) {
                 ADVERTISE_FAILED_ALREADY_STARTED -> {
@@ -62,9 +66,9 @@ class BLEAdvertiser constructor(val serviceUUID: String) {
             CentralLog.d(TAG, "Advertising onStartFailure: $errorCode - $reason")
         }
     }
-    val pUuid = ParcelUuid(UUID.fromString(serviceUUID))
+    private val pUuid = ParcelUuid(UUID.fromString(serviceUUID))
 
-    val settings = AdvertiseSettings.Builder()
+    private val settings = AdvertiseSettings.Builder()
         .setTxPowerLevel(AdvertiseSettings.ADVERTISE_TX_POWER_HIGH)
         .setAdvertiseMode(AdvertiseSettings.ADVERTISE_MODE_LOW_POWER)
         .setConnectable(true)

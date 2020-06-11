@@ -13,7 +13,7 @@ class CommandHandler(val service: WeakReference<BluetoothMonitoringService>) : H
         }
     }
 
-    fun sendCommandMsg(cmd: BluetoothMonitoringService.Command, delay: Long) {
+    private fun sendCommandMsg(cmd: BluetoothMonitoringService.Command, delay: Long) {
 //        val msg = obtainMessage(cmd.index)
         val msg = Message.obtain(this, cmd.index)
 //        msg.arg1 = cmd.index
@@ -35,7 +35,7 @@ class CommandHandler(val service: WeakReference<BluetoothMonitoringService>) : H
         sendCommandMsg(BluetoothMonitoringService.Command.ACTION_SCAN, timeInMillis)
     }
 
-    fun cancelNextScan() {
+    private fun cancelNextScan() {
         removeMessages(BluetoothMonitoringService.Command.ACTION_SCAN.index)
     }
 

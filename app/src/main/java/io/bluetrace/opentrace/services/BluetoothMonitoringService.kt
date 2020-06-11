@@ -149,7 +149,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
 
     private fun notifyLackingThings(override: Boolean = false) {
         if (notificationShown != NOTIFICATION_STATE.LACKING_THINGS || override) {
-            var notif =
+            val notif =
                 NotificationTemplates.lackingThingsNotification(this.applicationContext, CHANNEL_ID)
             startForeground(NOTIFICATION_ID, notif)
             notificationShown = NOTIFICATION_STATE.LACKING_THINGS
@@ -158,7 +158,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
 
     private fun notifyRunning(override: Boolean = false) {
         if (notificationShown != NOTIFICATION_STATE.RUNNING || override) {
-            var notif =
+            val notif =
                 NotificationTemplates.getRunningNotification(this.applicationContext, CHANNEL_ID)
             startForeground(NOTIFICATION_ID, notif)
             notificationShown = NOTIFICATION_STATE.RUNNING
@@ -238,7 +238,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
 
     fun runService(cmd: Command?) {
 
-        var doWork = true
+        val doWork = true
         CentralLog.i(TAG, "Command is:${cmd?.string}")
 
         //check for permissions
@@ -337,7 +337,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
             .addOnCompleteListener {
                 CentralLog.d(TAG, "Get TemporaryIDs completed")
                 //this will run whether it starts or fails.
-                var fetch = TempIDManager.retrieveTemporaryID(this.applicationContext)
+                val fetch = TempIDManager.retrieveTemporaryID(this.applicationContext)
                 fetch?.let {
                     broadcastMessage = it
                     setupCycles()
@@ -380,7 +380,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
             TempIDManager.getTemporaryIDs(this.applicationContext, functions)
                 .addOnCompleteListener {
                     //this will run whether it starts or fails.
-                    var fetch = TempIDManager.retrieveTemporaryID(this.applicationContext)
+                    val fetch = TempIDManager.retrieveTemporaryID(this.applicationContext)
                     fetch?.let {
                         broadcastMessage = it
                         performScan()
@@ -605,7 +605,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
             intent?.let {
                 val action = intent.action
                 if (action == BluetoothAdapter.ACTION_STATE_CHANGED) {
-                    var state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1)
+                    val state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1)
 
                     when (state) {
                         BluetoothAdapter.STATE_TURNING_OFF -> {
@@ -636,7 +636,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
         override fun onReceive(context: Context, intent: Intent) {
 
             if (ACTION_RECEIVED_STREETPASS == intent.action) {
-                var connRecord: ConnectionRecord = intent.getParcelableExtra(STREET_PASS)
+                val connRecord: ConnectionRecord = intent.getParcelableExtra(STREET_PASS)
                 CentralLog.d(
                     TAG,
                     "StreetPass received: $connRecord"
@@ -671,7 +671,7 @@ class BluetoothMonitoringService : Service(), CoroutineScope {
         override fun onReceive(context: Context, intent: Intent) {
 
             if (ACTION_RECEIVED_STATUS == intent.action) {
-                var statusRecord: Status = intent.getParcelableExtra(STATUS)
+                val statusRecord: Status = intent.getParcelableExtra(STATUS)
                 CentralLog.d(TAG, "Status received: ${statusRecord.msg}")
 
                 if (statusRecord.msg.isNotEmpty()) {

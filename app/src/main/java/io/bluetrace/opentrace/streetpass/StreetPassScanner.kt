@@ -39,7 +39,7 @@ class StreetPassScanner constructor(
 
     fun startScan() {
 
-        var statusRecord = Status("Scanning Started")
+        val statusRecord = Status("Scanning Started")
         Utils.broadcastStatusReceived(context, statusRecord)
 
         scanner.startScan(scanCallback)
@@ -52,7 +52,6 @@ class StreetPassScanner constructor(
         }
 
         CentralLog.d(TAG, "scanning started")
-//        discoverer.startDiscovery()
     }
 
     fun stopScan() {
@@ -62,7 +61,6 @@ class StreetPassScanner constructor(
             Utils.broadcastStatusReceived(context, statusRecord)
             scannerCount--
             scanner.stopScan()
-//        discoverer.cancelDiscovery()
         }
     }
 
@@ -78,7 +76,7 @@ class StreetPassScanner constructor(
 
             scanResult?.let { result ->
                 val device = result.device
-                var rssi = result.rssi // get RSSI value
+                val rssi = result.rssi // get RSSI value
 
                 var txPower: Int? = null
 
@@ -89,11 +87,11 @@ class StreetPassScanner constructor(
                     }
                 }
 
-                var manuData: ByteArray =
+                val manuData: ByteArray =
                     scanResult.scanRecord?.getManufacturerSpecificData(1023) ?: "N.A".toByteArray()
-                var manuString = String(manuData, Charsets.UTF_8)
+                val manuString = String(manuData, Charsets.UTF_8)
 
-                var connectable = ConnectablePeripheral(manuString, txPower, rssi)
+                val connectable = ConnectablePeripheral(manuString, txPower, rssi)
 
                 CentralLog.i(TAG, "Scanned: ${manuString} - ${device.address}")
 

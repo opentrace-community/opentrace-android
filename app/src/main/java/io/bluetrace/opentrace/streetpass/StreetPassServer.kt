@@ -15,7 +15,7 @@ class StreetPassServer constructor(val context: Context, val serviceUUIDString: 
 
     private fun setupGattServer(context: Context, serviceUUIDString: String): GattServer? {
         val gattServer = GattServer(context, serviceUUIDString)
-        var started = gattServer.startServer()
+        val started = gattServer.startServer()
 
         if (started) {
             val readService = GattService(context, serviceUUIDString)

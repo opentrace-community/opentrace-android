@@ -75,14 +75,14 @@ class EnterPinFragment : Fragment() {
 
         enterPinActionButton.setOnClickListener {
             enterPinFragmentErrorMessage.visibility = View.INVISIBLE
-            var myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
+            val myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
             myParentFragment.turnOnLoadingProgress()
 
-            var observableStreetRecords = Observable.create<List<StreetPassRecord>> {
+            val observableStreetRecords = Observable.create<List<StreetPassRecord>> {
                 val result = StreetPassRecordStorage(TracerApp.AppContext).getAllRecords()
                 it.onNext(result)
             }
-            var observableStatusRecords = Observable.create<List<StatusRecord>> {
+            val observableStatusRecords = Observable.create<List<StatusRecord>> {
                 val result = StatusRecordStorage(TracerApp.AppContext).getAllRecords()
                 it.onNext(result)
             }
@@ -108,7 +108,7 @@ class EnterPinFragment : Fragment() {
                         try {
                             val uploadToken = response["token"]
                             CentralLog.d(TAG, "uploadToken: $uploadToken")
-                            var task = writeToInternalStorageAndUpload(
+                            val task = writeToInternalStorageAndUpload(
                                 TracerApp.AppContext,
                                 exportedData.recordList,
                                 exportedData.statusList,
@@ -116,27 +116,27 @@ class EnterPinFragment : Fragment() {
                             )
                             task.addOnFailureListener {
                                 CentralLog.d(TAG, "failed to upload")
-                                var myParentFragment: UploadPageFragment =
+                                val myParentFragment: UploadPageFragment =
                                     (parentFragment as UploadPageFragment)
                                 myParentFragment.turnOffLoadingProgress()
                                 enterPinFragmentErrorMessage.visibility = View.VISIBLE
                             }.addOnSuccessListener {
                                 CentralLog.d(TAG, "uploaded successfully")
-                                var myParentFragment: UploadPageFragment =
+                                val myParentFragment: UploadPageFragment =
                                     (parentFragment as UploadPageFragment)
                                 myParentFragment.turnOffLoadingProgress()
                                 myParentFragment.navigateToUploadComplete()
                             }
                         } catch (e: Throwable) {
                             CentralLog.d(TAG, "Failed to upload data: ${e.message}")
-                            var myParentFragment: UploadPageFragment =
+                            val myParentFragment: UploadPageFragment =
                                 (parentFragment as UploadPageFragment)
                             myParentFragment.turnOffLoadingProgress()
                             enterPinFragmentErrorMessage.visibility = View.VISIBLE
                         }
                     }.addOnFailureListener {
                         CentralLog.d(TAG, "Invalid code")
-                        var myParentFragment: UploadPageFragment =
+                        val myParentFragment: UploadPageFragment =
                             (parentFragment as UploadPageFragment)
                         myParentFragment.turnOffLoadingProgress()
                         enterPinFragmentErrorMessage.visibility = View.VISIBLE
@@ -146,13 +146,13 @@ class EnterPinFragment : Fragment() {
 
         enterPinFragmentBackButtonLayout.setOnClickListener {
             println("onclick is pressed")
-            var myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
+            val myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
             myParentFragment.popStack()
         }
 
         enterPinFragmentBackButton.setOnClickListener {
             println("onclick is pressed")
-            var myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
+            val myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
             myParentFragment.popStack()
         }
     }
@@ -175,23 +175,23 @@ class EnterPinFragment : Fragment() {
         statusList: List<StatusRecord>,
         uploadToken: String?
     ): UploadTask {
-        var date = Utils.getDateFromUnix(System.currentTimeMillis())
-        var gson = Gson()
+        val date = Utils.getDateFromUnix(System.currentTimeMillis())
+        val gson = Gson()
 
         val manufacturer = Build.MANUFACTURER
         val model = Build.MODEL
 
-        var updatedDeviceList = deviceDataList.map {
+        val updatedDeviceList = deviceDataList.map {
             it.timestamp = it.timestamp / 1000
             return@map it
         }
 
-        var updatedStatusList = statusList.map {
+        val updatedStatusList = statusList.map {
             it.timestamp = it.timestamp / 1000
             return@map it
         }
 
-        var map: MutableMap<String, Any> = HashMap()
+        val map: MutableMap<String, Any> = HashMap()
         map["token"] = uploadToken as Any
         map["records"] = updatedDeviceList as Any
         map["events"] = updatedStatusList as Any
@@ -225,10 +225,10 @@ class EnterPinFragment : Fragment() {
 
         val bucketName = BuildConfig.FIREBASE_UPLOAD_BUCKET
         val storage = FirebaseStorage.getInstance("gs://${bucketName}")
-        var storageRef = storage.getReferenceFromUrl("gs://${bucketName}")
+        val storageRef = storage.getReferenceFromUrl("gs://${bucketName}")
 
         val dateString = SimpleDateFormat("YYYYMMdd").format(Date())
-        var streetPassRecordsRef =
+        val streetPassRecordsRef =
             storageRef.child("streetPassRecords/$dateString/${fileToUpload.name}")
 
         val fileUri: Uri =
@@ -238,7 +238,7 @@ class EnterPinFragment : Fragment() {
                 fileToUpload
             )
 
-        var uploadTask = streetPassRecordsRef.putFile(fileUri)
+        val uploadTask = streetPassRecordsRef.putFile(fileUri)
         uploadTask.addOnCompleteListener {
             try {
                 fileToUpload.delete()

@@ -59,7 +59,7 @@ class UploadPageFragment : Fragment() {
     }
 
     fun goBackToHome() {
-        var parentActivity = activity as MainActivity
+        val parentActivity = activity as MainActivity
         parentActivity.goToHome()
     }
 

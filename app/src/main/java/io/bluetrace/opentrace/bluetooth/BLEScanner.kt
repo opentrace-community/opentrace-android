@@ -1,11 +1,13 @@
 package io.bluetrace.opentrace.bluetooth
 
 import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothDevice
 import android.bluetooth.le.BluetoothLeScanner
 import android.bluetooth.le.ScanCallback
 import android.bluetooth.le.ScanFilter
 import android.bluetooth.le.ScanSettings
 import android.content.Context
+import android.os.Build
 import android.os.ParcelUuid
 import io.bluetrace.opentrace.Utils
 import io.bluetrace.opentrace.logging.CentralLog
@@ -42,12 +44,15 @@ class BLEScanner constructor(context: Context, uuid: String, reportDelay: Long) 
         val settings = ScanSettings.Builder()
             .setReportDelay(reportDelay)
             .setScanMode(ScanSettings.SCAN_MODE_LOW_POWER)
-            .build()
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            settings.setLegacy(false)
+            settings.setPhy(BluetoothDevice.PHY_LE_1M)
+        }
         this.scanCallback = scanCallback
         //try to get a scanner if there isn't anything
         scanner = scanner ?: BluetoothAdapter.getDefaultAdapter().bluetoothLeScanner
-        scanner?.startScan(filters, settings, scanCallback)
+        scanner?.startScan(filters, settings.build(), scanCallback)
     }
 
     fun flush() {

@@ -21,7 +21,7 @@ class UploadCompleteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         uploadCompleteFragmentActionButton.setOnClickListener {
-            var myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
+            val myParentFragment: UploadPageFragment = (parentFragment as UploadPageFragment)
             myParentFragment.goBackToHome()
         }
     }

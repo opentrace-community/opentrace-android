@@ -254,8 +254,8 @@ class GattServer constructor(val context: Context, serviceUUIDString: String) {
         }
 
         fun saveDataReceived(device: BluetoothDevice) {
-            var data = writeDataPayload[device.address]
-            var charUUID = deviceCharacteristicMap[device.address]
+            val data = writeDataPayload[device.address]
+            val charUUID = deviceCharacteristicMap[device.address]
 
             charUUID?.let {
                 data?.let {

@@ -19,10 +19,9 @@ class HelpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         this.inflater = inflater
-        val view = inflater.inflate(R.layout.fragment_help, container, false)
 
 
-        return view
+        return inflater.inflate(R.layout.fragment_help, container, false)
     }
 
 }

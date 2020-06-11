@@ -21,7 +21,7 @@ class ForUseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         forUseFragmentActionButton.setOnClickListener {
-            var myParentFragment: ForUseByOTCFragment = (parentFragment as ForUseByOTCFragment)
+            val myParentFragment: ForUseByOTCFragment = (parentFragment as ForUseByOTCFragment)
             myParentFragment.goToUploadFragment()
         }
     }

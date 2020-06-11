@@ -195,9 +195,9 @@ class StreetPassWorker(val context: Context) {
 
             CentralLog.i(TAG, "${work.device.address} is already in work queue")
 
-            var prevWork = workQueue.find { it.device.address == work.device.address }
-            var removed = workQueue.remove(prevWork)
-            var added = workQueue.offer(work)
+            val prevWork = workQueue.find { it.device.address == work.device.address }
+            val removed = workQueue.remove(prevWork)
+            val added = workQueue.offer(work)
 
             CentralLog.i(TAG, "Queue entry updated - removed: ${removed}, added: ${added}")
 
@@ -216,7 +216,7 @@ class StreetPassWorker(val context: Context) {
             //handle that situation here
 
             //if the job was finished or timed out but was not removed
-            var timedout = System.currentTimeMillis() > currentWork?.timeout ?: 0
+            val timedout = System.currentTimeMillis() > currentWork?.timeout ?: 0
             if (currentWork?.finished == true || timedout) {
 
                 CentralLog.w(
